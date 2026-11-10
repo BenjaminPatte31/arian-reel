@@ -1,0 +1,12 @@
+{
+  "id": "exemple-conseil",
+  "theme": "paper",
+  "keyword": "SITE",
+  "cards": [
+    { "t": 2.4, "type": "hook", "kicker": "ASTUCE", "title": "Votre fiche\nGoogle est vide ?", "sub": "Sans fiche Google, vos clients ne vous trouvent pas." },
+    { "t": 2.4, "type": "lines", "num": 1, "items": ["Ajoutez\nvos horaires"], "sub": "1. Des horaires à jour, toujours." },
+    { "t": 2.4, "type": "lines", "num": 2, "items": ["10 vraies\nphotos"], "sub": "2. Des photos de vos chantiers, pas de banque d'images." },
+    { "t": 2.4, "type": "lines", "num": 3, "items": ["Répondez\naux avis"], "sub": "3. Chaque avis mérite une réponse." },
+    { "t": 2.6, "type": "cta", "sub": "Besoin d'aide ? Commentez SITE." }
+  ]
+}
