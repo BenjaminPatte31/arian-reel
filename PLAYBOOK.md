@@ -4,9 +4,9 @@ Ce fichier est la mémoire de l'automatisation. Chaque passage hebdomadaire le l
 
 ## Identité
 - Arian Studio, agence web à Cazères (Haute-Garonne) : sites, sécurité, automatisation pour artisans, commerçants, TPE du Comminges et du sud toulousain.
-- Angle à marteler : moins cher que les agences à 2 000 € · un site pensé pour faire contacter · visible sur Google (SEO). Site dès 400 €, prix fixe.
+- Angle à marteler : moins cher que les agences à 2 000 € · un site pensé pour faire contacter · visible sur Google (SEO). Prix fixe, devis gratuit (ne plus annoncer « dès 400 € »).
 - Charte : encre #101418, crème #F2EFE8, citron #D4FF3F. Titres Bricolage Grotesque, texte Manrope, logo Montserrat.
-- Contact : arianstudio31@gmail.com · arianstudio.netlify.app
+- Contact : arianstudio31@gmail.com · arianstudio.fr
 - Légendes au vouvoiement. Mot-clé d'appel à l'action : **SITE** (maquette / audit gratuit).
 - Preuves réelles uniquement : Horizon Journal (site animé), PA Nuisibles (site vitrine), le site Arian Studio. Ne jamais inventer de client, de chiffre ni de témoignage. Une maquette n'est jamais présentée comme un client livré.
 

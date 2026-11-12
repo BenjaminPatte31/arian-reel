@@ -94,7 +94,7 @@ function html(c){
     <div class="baItem row" data-i="0"><div class="batag bad">AVANT</div><div class="mock bad"><div class="mockbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mockbody"><div class="gl" style="width:78%"></div><div class="gl" style="width:95%"></div><div class="gl" style="width:46%"></div><div class="badgeico x">✕</div></div></div></div>
     <div class="baItem row" data-i="1"><div class="batag good">APRÈS</div><div class="mock good"><div class="mockbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mockbody"><div class="gl" style="width:64%"></div><div class="gl" style="width:88%"></div><div class="gpill"></div><div class="badgeico v">✓</div></div></div></div></div>`;
   if(c.type==='demo') return c.kicker?`<div class="kicker row" data-i="0">${c.kicker}</div>`:'';
-  if(c.type==='cta') return `${LOGO}<div class="ctahead row" data-i="1">${c.head||'Commentez'}</div><div class="ctapill row" data-i="2">« ${R.keyword||'SITE'} »</div><div class="ctameta row" data-i="3">arianstudio.netlify.app<br>arianstudio31@gmail.com</div>`;
+  if(c.type==='cta') return `${LOGO}<div class="ctahead row" data-i="1">${c.head||'Commentez'}</div><div class="ctapill row" data-i="2">« ${R.keyword||'SITE'} »</div><div class="ctameta row" data-i="3">arianstudio.fr<br>arianstudio31@gmail.com</div>`;
   return '';
 }
 let cur=-1;const ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3);
