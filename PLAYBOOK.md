@@ -33,3 +33,4 @@ Ce fichier est la mémoire de l'automatisation. Chaque passage hebdomadaire le l
 
 ## Historique
 - 10/11/2026 : lancement. 7 Reels programmés du 10/11 au 24/11.
+- 16/11/2026 : Reel 08 (fiche Google) programmé le 26/11. 8 posts en novembre.
