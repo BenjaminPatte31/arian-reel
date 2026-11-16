@@ -1,0 +1,13 @@
+{
+  "id": "reel-08-fiche-google",
+  "theme": "ink",
+  "keyword": "SITE",
+  "cards": [
+    { "t": 2.6, "type": "hook", "kicker": "ASTUCE GOOGLE", "title": "Votre fiche\nGoogle est\nà l'abandon ?", "sub": "Vos clients la voient avant même votre site." },
+    { "t": 2.3, "type": "lines", "num": 1, "items": ["Des horaires\nà jour"], "sub": "Rien de pire qu'un client devant une porte fermée." },
+    { "t": 2.3, "type": "lines", "num": 2, "items": ["De vraies\nphotos"], "sub": "Vos chantiers, votre boutique. Pas de banque d'images." },
+    { "t": 2.3, "type": "lines", "num": 3, "items": ["Répondez\naux avis"], "sub": "Même aux avis négatifs. Surtout à ceux-là." },
+    { "t": 2.3, "type": "lines", "num": 4, "items": ["Un lien vers\nvotre site"], "sub": "La fiche attire, le site fait appeler." },
+    { "t": 2.8, "type": "cta", "head": "Audit gratuit ?\nCommentez", "sub": "On vérifie votre fiche et votre site, gratuitement." }
+  ]
+}
