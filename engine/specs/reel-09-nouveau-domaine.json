@@ -1,0 +1,37 @@
+{
+  "id": "reel-09-nouveau-domaine",
+  "theme": "ink",
+  "keyword": "SITE",
+  "cards": [
+    {
+      "t": 2.4,
+      "type": "hook",
+      "kicker": "NOUVEAU",
+      "title": "Nouvelle\nadresse.",
+      "sub": "Arian Studio a un nouveau nom de domaine."
+    },
+    {
+      "t": 2.8,
+      "type": "hook",
+      "kicker": "NOTEZ-LA",
+      "title": "arianstudio\n<span style=\"color:#D4FF3F\">.fr</span>",
+      "sub": "arianstudio.fr, tout simplement."
+    },
+    {
+      "t": 2.6,
+      "type": "lines",
+      "items": [
+        "Nos réalisations",
+        "Nos offres",
+        "Devis gratuit en 24 h"
+      ],
+      "sub": "Tout est là : réalisations, offres, contact."
+    },
+    {
+      "t": 2.8,
+      "type": "cta",
+      "head": "Un projet ?\nCommentez",
+      "sub": "Ou rendez-vous sur arianstudio.fr"
+    }
+  ]
+}
