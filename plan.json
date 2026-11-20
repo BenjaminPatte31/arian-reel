@@ -40,20 +40,22 @@
     "metricool_id": "423135676"
   },
   {
-    "file": "reels/reel-06-avant-apres.mp4",
+    "file": "reels/reel-06-site-vitrine.mp4",
     "date": "2026-11-21T10:00:00",
     "timezone": "Europe/Paris",
     "caption": "Un site vitrine simple et carré pour un artisan. Clair, rapide, rassurant : exactement ce qu'un client cherche avant d'appeler.\n\nVous voulez le vôtre ? Commentez SITE 👇\n\n#siteweb #creationsiteweb #agenceweb #artisan #commercant #petiteentreprise #hautegaronne #comminges #cazeres #toulouse #webdesign",
     "status": "programme",
-    "metricool_id": "423135745"
+    "metricool_id": "423135745",
+    "note": "20/11 : URL arianstudio.netlify.app remplacée par arianstudio.fr"
   },
   {
-    "file": "reels/reel-07-offre-400.mp4",
+    "file": "reels/reel-07-offre.mp4",
     "date": "2026-11-24T18:00:00",
     "timezone": "Europe/Paris",
     "caption": "Un site pro, prix fixe, sans surprise. Conçu, mis en ligne et optimisé pour Google. Devis gratuit.\n\nDevis clair en 24 h : commentez SITE ou écrivez-nous en message 👇\n\n#siteweb #creationsiteweb #agenceweb #artisan #commercant #petiteentreprise #hautegaronne #comminges #cazeres #toulouse #webdesign",
     "status": "programme",
-    "metricool_id": "426359150"
+    "metricool_id": "426359150",
+    "note": "20/11 : refait sans prix, domaine arianstudio.fr"
   },
   {
     "file": "reels/reel-08-fiche-google.mp4",

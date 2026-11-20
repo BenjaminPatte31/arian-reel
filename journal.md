@@ -23,3 +23,9 @@ Programmé cette semaine :
 - Créneaux 17, 19, 21 et 24/11 déjà remplis. Total novembre : 8 posts / 20.
 - Note : l'id Metricool du Reel 07 a changé (426359150, post modifié le 13/11).
 - Blocage : arianstudio.fr injoignable depuis le bac à sable (proxy 403) → pas de capture d'écran du site pour une démo. Pour les prochaines démos, déposer des vidéos de défilement (Horizon Journal, PA Nuisibles, site Arian) dans `engine/assets/`.
+
+## 20/11/2026 : changement de domaine
+- Nouveau domaine arianstudio.fr. Le moteur l'utilisait déjà depuis le 13/11 (Reel 08 OK).
+- Reel 06 (21/11) : l'ancienne adresse incrustée remplacée par arianstudio.fr → `reel-06-site-vitrine.mp4`.
+- Reel 07 (24/11) : refait avec le moteur, sans « dès 400 € » et avec arianstudio.fr → `reel-07-offre.mp4`.
+- Reels 01 à 05 déjà publiés : Instagram ne permet pas de remplacer la vidéo d'un Reel publié ; ils gardent l'ancienne adresse à l'écran (les légendes n'en contiennent pas).

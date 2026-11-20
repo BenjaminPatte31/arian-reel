@@ -1,0 +1,10 @@
+{
+  "id": "reel-07-offre",
+  "theme": "ink",
+  "keyword": "SITE",
+  "cards": [
+    { "t": 2.6, "type": "hook", "kicker": "L'OFFRE", "title": "Un site pro,\nprix fixe.", "sub": "Pas de surprise sur la facture." },
+    { "t": 2.8, "type": "lines", "items": ["Conçu + mis en ligne", "Optimisé Google", "Devis clair en 24 h"], "sub": "Tout compris, devis gratuit en 24 h." },
+    { "t": 3.0, "type": "cta", "head": "Votre devis ?\nCommentez", "sub": "Commentez SITE pour votre devis." }
+  ]
+}
