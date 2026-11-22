@@ -30,3 +30,6 @@ Programmé cette semaine :
 - Reel 07 (24/11) : refait avec le moteur, sans « dès 400 € » et avec arianstudio.fr → `reel-07-offre.mp4`.
 - Reels 01 à 05 déjà publiés : Instagram ne permet pas de remplacer la vidéo d'un Reel publié ; ils gardent l'ancienne adresse à l'écran (les légendes n'en contiennent pas).
 - Reel 09 « Nouvelle adresse : arianstudio.fr » programmé en priorité le 20/11 à 12 h (id 435252239, vidéo corrigée : domaine sur une ligne). Total novembre : 9 posts / 20.
+
+## 22/11/2026 : son
+- Bande-son originale ajoutée au moteur (beat + whoosh aux transitions). Reels 07 (24/11) et 08 (26/11) refaits avec son et remplacés dans Metricool.

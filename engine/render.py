@@ -6,6 +6,8 @@ Prérequis : `cd engine && npm install` (polices), playwright (préinstallé), f
 """
 import asyncio, base64, json, os, pathlib, shutil, subprocess, sys, urllib.parse
 from playwright.async_api import async_playwright
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
+from audio import make_track
 
 ROOT = pathlib.Path(__file__).resolve().parent
 REPO = ROOT.parent
@@ -48,10 +50,15 @@ async def render(ctx, spec_path):
     await pg.close()
     out = REPO / "reels" / f"{rid}.mp4"
     out.parent.mkdir(exist_ok=True)
-    subprocess.run(["ffmpeg", "-y", "-framerate", str(FPS), "-i", str(fdir / "f%05d.jpg"),
-                    "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+    # Bande-son originale : beat + whoosh à chaque changement de carte
+    cuts, acc = [], 0.0
+    for c in spec["cards"]:
+        cuts.append(acc); acc += c["t"]
+    wav = fdir / "audio.wav"
+    make_track(dur, cuts, wav, seed=spec.get("music_seed", sum(map(ord, rid))))
+    subprocess.run(["ffmpeg", "-y", "-framerate", str(FPS), "-i", str(fdir / "f%05d.jpg"), "-i", str(wav),
                     "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-crf", "19",
-                    "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out)],
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)],
                    check=True, capture_output=True)
     shutil.copy(fdir / f"f{int(FPS*1.2):05d}.jpg", REPO / "reels" / f"{rid}-check.jpg")
     shutil.rmtree(fdir, ignore_errors=True)

@@ -15,6 +15,7 @@ Ce fichier est la mémoire de l'automatisation. Chaque passage hebdomadaire le l
 - Hébergement des vidéos : ce dépôt. URL publique d'une vidéo :
   `https://raw.githubusercontent.com/BenjaminPatte31/arian-reel/main/reels/<fichier>.mp4` (Metricool la récupère et la copie chez lui).
 - Rendu : `cd engine && npm install` puis `python3 engine/render.py engine/specs/<id>.json` → `reels/<id>.mp4` + `reels/<id>-check.jpg`.
+  Le rendu ajoute automatiquement une bande-son originale (engine/audio.py : beat 112 BPM, whoosh à chaque changement de carte, ~-14 LUFS). Libre de droits, rien à faire. Option : `"music_seed": n` dans la spec pour changer la grille d'accords.
   Types de cartes : `hook`, `lines` (liste ou `num`), `big`, `beforeafter`, `demo` (vidéo dans un faux navigateur : `video`, `url`, `start`), `cta`.
 
 ## Rythme
@@ -32,5 +33,6 @@ Ce fichier est la mémoire de l'automatisation. Chaque passage hebdomadaire le l
 7. Envoyer à Benjamin un récap court : les Reels de la semaine (hook + date) et le lien du planificateur Metricool, pour qu'il puisse en retirer un avant publication.
 
 ## Historique
+- 22/11/2026 : ajout de la bande-son automatique ; Reels 07 et 08 refaits avec son.
 - 10/11/2026 : lancement. 7 Reels programmés du 10/11 au 24/11.
 - 16/11/2026 : Reel 08 (fiche Google) programmé le 26/11. 8 posts en novembre.
