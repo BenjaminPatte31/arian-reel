@@ -1,0 +1,11 @@
+{
+  "id": "reel-11-avant-apres",
+  "theme": "paper",
+  "keyword": "SITE",
+  "cards": [
+    { "t": 2.4, "type": "hook", "kicker": "AVANT / APRÈS", "title": "Ce qui fait\nappeler un\nclient.", "sub": "Tout se joue sur le premier écran." },
+    { "t": 2.6, "type": "beforeafter", "sub": "Avant : du texte. Après : une action évidente." },
+    { "t": 3.0, "type": "lines", "items": ["Métier + ville", "Le numéro en gros", "De vraies photos"], "sub": "Les 3 choses à voir sans faire défiler." },
+    { "t": 2.8, "type": "cta", "head": "Le vôtre ?\nCommentez", "sub": "On vous montre ce qu'on changerait, gratuitement." }
+  ]
+}

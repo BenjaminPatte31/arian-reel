@@ -1,0 +1,12 @@
+{
+  "id": "reel-10-test-telephone",
+  "theme": "ink",
+  "keyword": "SITE",
+  "cards": [
+    { "t": 2.4, "type": "hook", "kicker": "TEST EN 30 SECONDES", "title": "Ouvrez votre\nsite sur votre\ntéléphone.", "sub": "C'est là que vos clients le regardent." },
+    { "t": 2.3, "type": "lines", "num": 1, "items": ["Le numéro\nest cliquable ?"], "sub": "Un appui = un appel. Sinon, il passe au suivant." },
+    { "t": 2.3, "type": "lines", "num": 2, "items": ["Votre ville\nest écrite ?"], "sub": "Vos clients et Google doivent savoir où vous intervenez." },
+    { "t": 2.3, "type": "lines", "num": 3, "items": ["Un bouton\ndevis visible ?"], "sub": "Dès le premier écran, sans avoir à le chercher." },
+    { "t": 2.8, "type": "cta", "head": "Un « non » ?\nCommentez", "sub": "On vérifie votre site gratuitement." }
+  ]
+}
