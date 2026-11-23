@@ -28,7 +28,7 @@
     "date": "2026-11-17T18:00:00",
     "timezone": "Europe/Paris",
     "caption": "Comment on monte un site propre en 3 jours. Pas de blabla, pas de réunion interminable.\n\nJour 1 on cadre, jour 2 on construit, jour 3 c'est en ligne et visible sur Google.\n\nOn lance le vôtre ? Commentez SITE 👇\n\n#siteweb #creationsiteweb #agenceweb #artisan #commercant #petiteentreprise #hautegaronne #comminges #cazeres #toulouse #webdesign",
-    "status": "programme",
+    "status": "publie",
     "metricool_id": "423135604"
   },
   {
@@ -36,7 +36,7 @@
     "date": "2026-11-19T18:00:00",
     "timezone": "Europe/Paris",
     "caption": "Votre site met plus de 3 secondes à charger ? Une bonne partie de vos visiteurs est déjà partie chez le concurrent.\n\nLa vitesse, c'est des appels en plus.\n\nOn teste votre site gratuitement : commentez SITE 👇\n\n#siteweb #creationsiteweb #agenceweb #artisan #commercant #petiteentreprise #hautegaronne #comminges #cazeres #toulouse #webdesign",
-    "status": "programme",
+    "status": "publie",
     "metricool_id": "423135676"
   },
   {
@@ -44,7 +44,7 @@
     "date": "2026-11-21T10:00:00",
     "timezone": "Europe/Paris",
     "caption": "Un site vitrine simple et carré pour un artisan. Clair, rapide, rassurant : exactement ce qu'un client cherche avant d'appeler.\n\nVous voulez le vôtre ? Commentez SITE 👇\n\n#siteweb #creationsiteweb #agenceweb #artisan #commercant #petiteentreprise #hautegaronne #comminges #cazeres #toulouse #webdesign",
-    "status": "programme",
+    "status": "publie",
     "metricool_id": "435248867",
     "note": "20/11 : URL arianstudio.netlify.app remplacée par arianstudio.fr"
   },
@@ -70,7 +70,31 @@
     "date": "2026-11-20T12:00:00",
     "timezone": "Europe/Paris",
     "caption": "Annonce du nouveau domaine arianstudio.fr",
-    "status": "programme",
+    "status": "publie",
     "metricool_id": "435252239"
+  },
+  {
+    "file": "reels/reel-10-test-telephone.mp4",
+    "date": "2026-11-28T10:00:00",
+    "timezone": "Europe/Paris",
+    "hook": "Ouvrez votre site sur votre téléphone. (conseil, test en 3 questions)",
+    "status": "programme",
+    "metricool_id": "438427617"
+  },
+  {
+    "file": "reels/reel-11-avant-apres.mp4",
+    "date": "2026-12-01T18:00:00",
+    "timezone": "Europe/Paris",
+    "hook": "Ce qui fait appeler un client. (avant/après, premier écran)",
+    "status": "programme",
+    "metricool_id": "438427631"
+  },
+  {
+    "file": "reels/reel-12-coulisses-ce-quil-faut.mp4",
+    "date": "2026-12-03T18:00:00",
+    "timezone": "Europe/Paris",
+    "hook": "Votre site ? On a juste besoin de ça. (coulisses)",
+    "status": "programme",
+    "metricool_id": "438427653"
   }
 ]
