@@ -15,18 +15,19 @@ FPS = 30
 FONTS = [
     ("Bricolage Grotesque", 800, "bricolage-grotesque"), ("Bricolage Grotesque", 700, "bricolage-grotesque"),
     ("Manrope", 800, "manrope"), ("Manrope", 700, "manrope"), ("Manrope", 600, "manrope"),
-    ("Montserrat", 800, "montserrat"), ("Montserrat", 700, "montserrat"),
+    ("Montserrat", 800, "montserrat"), ("Montserrat", 700, "montserrat"), ("Montserrat", "800i", "montserrat"),
 ]
 
 def build_fonts():
     out = ROOT / "fonts.css"
-    if out.exists():
+    if out.exists() and "font-style:italic" in out.read_text():
         return
     css = []
     for fam, w, pkg in FONTS:
-        f = ROOT / f"node_modules/@fontsource/{pkg}/files/{pkg}-latin-{w}-normal.woff2"
+        ital = str(w).endswith("i"); w = str(w).rstrip("i")
+        f = ROOT / f"node_modules/@fontsource/{pkg}/files/{pkg}-latin-{w}-{'italic' if ital else 'normal'}.woff2"
         b = base64.b64encode(f.read_bytes()).decode()
-        css.append(f"@font-face{{font-family:'{fam}';font-weight:{w};font-display:block;src:url(data:font/woff2;base64,{b}) format('woff2')}}")
+        css.append(f"@font-face{{font-family:'{fam}';font-weight:{w};font-style:{'italic' if ital else 'normal'};font-display:block;src:url(data:font/woff2;base64,{b}) format('woff2')}}")
     out.write_text("\n".join(css))
 
 async def render(ctx, spec_path):

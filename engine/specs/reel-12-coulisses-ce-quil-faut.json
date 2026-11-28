@@ -1,11 +1,13 @@
 {
   "id": "reel-12-coulisses-ce-quil-faut",
-  "theme": "ink",
+  "theme": "plan-ink",
+  "planche": "Planche 02 · Coulisses",
+  "num": "12",
   "keyword": "SITE",
   "cards": [
-    { "t": 2.4, "type": "hook", "kicker": "COULISSES", "title": "Votre site ?\nOn a juste\nbesoin de ça.", "sub": "Pas de cahier des charges de 30 pages." },
-    { "t": 3.2, "type": "lines", "items": ["Votre logo", "Quelques photos de chantier", "Vos services", "Votre zone d'intervention"], "sub": "Une liste simple, envoyée par message ou par mail." },
-    { "t": 2.2, "type": "hook", "title": "Le reste,\non s'en\noccupe.", "sub": "Textes, design, mise en ligne, Google." },
-    { "t": 2.8, "type": "cta", "head": "On commence ?\nCommentez", "sub": "Devis gratuit, prix fixe." }
+    { "t": 2.5, "type": "hook", "kicker": "COULISSES", "title": "Votre site ?\nOn a juste\n*besoin de ça.*", "cote": "4 éléments", "sub": "Pas de cahier des charges de 30 pages." },
+    { "t": 3.2, "type": "lines", "items": ["Votre logo", "Quelques photos", "Vos services", "Votre zone"], "sub": "Une liste simple, envoyée par message ou par mail." },
+    { "t": 2.3, "type": "hook", "title": "Le reste,\non s'en\n*occupe.*", "cote": false, "sub": "Textes, design, mise en ligne, Google, suivi." },
+    { "t": 2.8, "type": "cta", "head": "On commence ?\nCommentez", "sub": "Prix fixe annoncé avant de commencer." }
   ]
 }

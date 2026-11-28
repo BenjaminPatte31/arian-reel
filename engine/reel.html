@@ -59,10 +59,71 @@ html,body{width:1080px;height:1920px;overflow:hidden}
 #sub span{display:inline;font-family:'Manrope';font-weight:800;font-size:52px;line-height:1.45;
   background:#101418;color:#fff;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:6px 20px 12px;border-radius:14px}
 #bar{position:absolute;left:0;bottom:0;height:12px;background:#D4FF3F;width:0;z-index:7}
+/* ===== Thème « plan » : DA arianstudio.fr (planches, grille, cotes, croquis) ===== */
+#grid,#frame,#sheet,#cart,.cm{display:none}
+.plan{background:#F2EFE8;color:#101418;--line:#101418;--gl:rgba(16,20,24,.085);--gs:rgba(16,20,24,.04);--soft:rgba(16,20,24,.45)}
+.plan.dark{background:#101418;color:#F2EFE8;--line:#F2EFE8;--gl:rgba(242,239,232,.075);--gs:rgba(242,239,232,.032);--soft:rgba(242,239,232,.5)}
+.plan #glow{display:none}
+.plan #grid{display:block;position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;
+  background-image:linear-gradient(var(--gl) 2px,transparent 2px),linear-gradient(90deg,var(--gl) 2px,transparent 2px),
+  linear-gradient(var(--gs) 1px,transparent 1px),linear-gradient(90deg,var(--gs) 1px,transparent 1px);
+  background-size:200px 200px,200px 200px,40px 40px,40px 40px}
+.plan #frame{display:block;position:absolute;left:48px;right:48px;top:48px;bottom:48px;border:2px solid var(--line);opacity:.55;z-index:2}
+.plan .cm{display:block;position:absolute;width:56px;height:56px;z-index:2}
+.cm::before,.cm::after{content:'';position:absolute;background:var(--line)}
+.cm::before{left:27px;top:0;width:2px;height:56px}.cm::after{top:27px;left:0;height:2px;width:56px}
+.cm.a{left:20px;top:20px}.cm.b{right:20px;top:20px}.cm.c{left:20px;bottom:20px}.cm.d{right:20px;bottom:20px}
+.plan #brand .wm{font-size:32px;letter-spacing:.08em}
+.plan #brand .wm i{font-style:italic;font-weight:800}
+.plan #sheet{display:flex;align-items:center;gap:14px;position:absolute;top:104px;right:84px;z-index:5;
+  font-family:'Manrope';font-weight:800;font-size:24px;letter-spacing:.18em;text-transform:uppercase}
+#sheet b{width:18px;height:18px;background:#D4FF3F;border:2px solid var(--line);display:block}
+.plan #cart{display:grid;grid-template-columns:1.25fr 1fr .7fr;position:absolute;left:48px;right:48px;bottom:48px;height:84px;
+  border-top:2px solid var(--line);z-index:5;font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:.14em;text-transform:uppercase}
+#cart div{display:flex;align-items:center;padding:0 26px;border-left:2px solid var(--line)}
+#cart div:first-child{border-left:0}
+.plan #sub{bottom:240px}
+.plan #sub span{background:#101418;color:#F2EFE8;border-radius:6px}
+.plan.dark #sub span{background:#F2EFE8;color:#101418}
+.plan #bar{height:10px}
+.plan .kicker{background:transparent;color:inherit;border:3px solid var(--line);border-radius:6px;font-family:'Manrope';
+  font-size:28px;letter-spacing:.18em;padding:12px 24px 12px 20px;display:inline-flex;align-items:center;gap:16px}
+.plan .kicker::before{content:'';width:20px;height:20px;background:#D4FF3F;border:2px solid var(--line)}
+.plan .title{font-size:128px}
+.title em{font-style:italic;padding:0 .04em;background:linear-gradient(transparent 60%,#D4FF3F 60%,#D4FF3F 90%,transparent 90%)}
+.plan.dark .title em,.plan.dark .statement em{background:none;color:#D4FF3F}
+.statement em{font-style:italic;background:linear-gradient(transparent 60%,#D4FF3F 60%,#D4FF3F 90%,transparent 90%)}
+.cote{position:relative;width:100%;height:44px;margin-top:-6px}
+.cote::before,.cote::after{content:'';position:absolute;top:6px;width:3px;height:32px;background:var(--line)}
+.cote::before{left:0}.cote::after{right:0}
+.cote i{position:absolute;left:0;right:0;top:21px;height:2px;background:var(--line)}
+.cote span{position:absolute;left:50%;top:0;transform:translateX(-50%);background:var(--bgc,#F2EFE8);padding:0 18px;
+  font-family:'Manrope';font-weight:800;font-size:24px;letter-spacing:.18em;text-transform:uppercase;line-height:44px}
+.plan.dark .cote span{--bgc:#101418}
+.step{font-family:'Manrope';font-weight:800;font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.plan .badge{font-size:200px;color:#D4FF3F;-webkit-text-stroke:5px #101418;letter-spacing:-.02em;line-height:.85}
+.plan.dark .badge{-webkit-text-stroke:0}
+.plan .check .mk{border-radius:8px;border:4px solid var(--line);width:76px;height:76px;font-size:44px}
+.plan .ctapill{border:4px solid #101418;border-radius:10px}
+.plan .ctameta{font-size:38px;opacity:1}
+.plan .mock{border:3px solid var(--line);border-radius:14px;background:transparent!important}
+.plan .mock.bad{border-style:dashed;opacity:.75}
+.plan .mockbar{background:transparent;border-bottom:3px solid var(--line)}
+.plan .dot{background:transparent;border:3px solid var(--line)}
+.plan .gl{background:transparent;border:3px solid var(--line);height:30px}
+.plan .mock.bad .gl{border-style:dashed}
+.plan .gpill{border:3px solid var(--line);height:46px}
+.plan .batag.bad{background:transparent;border:3px dashed var(--line);border-radius:6px}
+.plan .batag.good{border:3px solid var(--line);border-radius:6px}
+.plan #demo{border:3px solid var(--line);box-shadow:none;border-radius:14px}
 </style></head>
 <body>
 <div id="stage" class="ink">
   <div id="glow"></div>
+  <div id="grid"></div>
+  <div id="frame"></div><div class="cm a"></div><div class="cm b"></div><div class="cm c"></div><div class="cm d"></div>
+  <div id="sheet"><b></b><span></span></div>
+  <div id="cart"><div>arianstudio.fr</div><div>Audit gratuit · 48 h</div><div id="cartn"></div></div>
   <div id="brand">
     <svg viewBox="0 0 100 112" fill="none"><path d="M50 4 L92 108 H64 L50 70 L36 108 H8 Z" fill="#D4FF3F"/><path d="M50 4 L50 52 M34 30 L50 10 L66 30" stroke="#101418" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <div class="wm">ARIAN STUDIO</div>
@@ -77,15 +138,31 @@ html,body{width:1080px;height:1920px;overflow:hidden}
 const R=JSON.parse(decodeURIComponent(new URLSearchParams(location.search).get('spec')));
 const stage=document.getElementById('stage'),card=document.getElementById('card'),sub=document.querySelector('#sub span'),
   bar=document.getElementById('bar'),glow=document.getElementById('glow'),demo=document.getElementById('demo'),dv=document.getElementById('dv');
-stage.className=R.theme||'ink';
-document.querySelector('#brand .wm').style.color=(R.theme==='paper')?'#101418':'#F2EFE8';
+const PLAN=(R.theme||'').startsWith('plan'), DARK=R.theme==='plan-ink';
+stage.className=PLAN?('plan'+(DARK?' dark':'')):(R.theme||'ink');
+const INK=(R.theme==='paper')||(PLAN&&!DARK);
+document.querySelector('#brand .wm').style.color=INK?'#101418':'#F2EFE8';
+const logoSvg=(cls)=>INK&&PLAN
+  ?`<svg ${cls} viewBox="0 0 100 112" fill="none"><path d="M50 4 L92 108 H64 L50 70 L36 108 H8 Z" fill="#101418"/><path d="M50 4 L50 52 M34 30 L50 10 L66 30" stroke="#D4FF3F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  :`<svg ${cls} viewBox="0 0 100 112" fill="none"><path d="M50 4 L92 108 H64 L50 70 L36 108 H8 Z" fill="#D4FF3F"/><path d="M50 4 L50 52 M34 30 L50 10 L66 30" stroke="#101418" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+if(PLAN){
+  document.querySelector('#brand svg').outerHTML=logoSvg('');
+  document.querySelector('#brand .wm').innerHTML='ARIAN <i>STUDIO</i>';
+  document.querySelector('#sheet span').textContent=R.planche||'';
+  if(!R.planche) document.getElementById('sheet').style.display='none';
+  document.getElementById('cartn').textContent=R.num?("Réel n° "+R.num):'';
+}
+const NUMS=R.cards.filter(c=>c.num).length;
+const em=s=>(s||'').replace(/\*([^*]+)\*/g,'<em>$1</em>');
 let tt=0;const cards=R.cards.map(c=>{const o={...c,t0:tt,t1:tt+c.t};tt+=c.t;return o;});
 window.DURATION=tt;
-const LOGO=`<svg class="ctalogo row" data-i="0" viewBox="0 0 100 112" fill="none"><path d="M50 4 L92 108 H64 L50 70 L36 108 H8 Z" fill="#D4FF3F"/><path d="M50 4 L50 52 M34 30 L50 10 L66 30" stroke="#101418" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-const br=s=>(s||'').replace(/\n/g,'<br>');
+const LOGO=logoSvg('class="ctalogo row" data-i="0"');
+const br=s=>em(s).replace(/\n/g,'<br>');
 function html(c){
-  if(c.type==='hook') return `${c.kicker?`<div class="kicker row" data-i="0">${c.kicker}</div>`:''}<div class="title">${c.title.split('\n').map((l,i)=>`<span class="ln row" data-i="${i+1}">${l}</span>`).join('')}</div>`;
+  if(c.type==='hook'){const n=c.title.split('\n').length;
+    return `${c.kicker?`<div class="kicker row" data-i="0">${c.kicker}</div>`:''}<div class="title">${c.title.split('\n').map((l,i)=>`<span class="ln row" data-i="${i+1}">${em(l)}</span>`).join('')}</div>${PLAN&&c.cote!==false?`<div class="cote row" data-i="${n+1}"><i></i>${c.cote?`<span>${c.cote}</span>`:''}</div>`:''}`;}
   if(c.type==='lines'){
+    if(c.num&&PLAN) return `<div class="step row" data-i="0">Point ${c.num} sur ${NUMS}</div><div class="badge row" data-i="0">${String(c.num).padStart(2,'0')}</div><div class="statement row" data-i="1">${br(c.items[0])}</div>`;
     if(c.num) return `<div class="badge row" data-i="0">${c.num}</div><div class="statement row" data-i="1">${br(c.items[0])}</div>`;
     return c.items.map((it,i)=>`<div class="check row" data-i="${i}"><div class="mk">✓</div><div>${br(it)}</div></div>`).join('');
   }
@@ -94,6 +171,7 @@ function html(c){
     <div class="baItem row" data-i="0"><div class="batag bad">AVANT</div><div class="mock bad"><div class="mockbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mockbody"><div class="gl" style="width:78%"></div><div class="gl" style="width:95%"></div><div class="gl" style="width:46%"></div><div class="badgeico x">✕</div></div></div></div>
     <div class="baItem row" data-i="1"><div class="batag good">APRÈS</div><div class="mock good"><div class="mockbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mockbody"><div class="gl" style="width:64%"></div><div class="gl" style="width:88%"></div><div class="gpill"></div><div class="badgeico v">✓</div></div></div></div></div>`;
   if(c.type==='demo') return c.kicker?`<div class="kicker row" data-i="0">${c.kicker}</div>`:'';
+  if(c.type==='cta'&&PLAN) return `${LOGO}<div class="ctahead row" data-i="1">${br(c.head||'Commentez')}</div><div class="ctapill row" data-i="2">« ${R.keyword||'SITE'} »</div><div class="ctameta row" data-i="3">${br(c.meta||'Audit gratuit de votre site\nrendu sous 48 h · arianstudio.fr')}</div>`;
   if(c.type==='cta') return `${LOGO}<div class="ctahead row" data-i="1">${c.head||'Commentez'}</div><div class="ctapill row" data-i="2">« ${R.keyword||'SITE'} »</div><div class="ctameta row" data-i="3">arianstudio.fr<br>arianstudio31@gmail.com</div>`;
   return '';
 }
@@ -112,7 +190,10 @@ window.renderFrame=async function(t){
   if(i!==cur){cur=i;card.className=c.type==='cta'?'ctacard':'';card.innerHTML=html(c);card._rows=[...card.querySelectorAll('.row')];
     if(c.type==='demo'){card.style.top='300px';card.style.transform='none';}else{card.style.top='50%';card.style.transform='translateY(-50%)';}}
   const lt=t-c.t0;
-  card._rows.forEach(r=>{const p=ease((lt-(+r.dataset.i||0)*.1)/.45);r.style.opacity=p;r.style.transform=`translateY(${(1-p)*46}px)`;});
+  card._rows.forEach(r=>{const p=ease((lt-(+r.dataset.i||0)*.1)/.45);
+    if(r.classList.contains('cote')){const q=ease((lt-.25-(+r.dataset.i||0)*.1)/.5);r.style.opacity=q>0?1:0;r.style.clipPath=`inset(0 ${(1-q)*100}% 0 0)`;return;}
+    r.style.opacity=p;r.style.transform=`translateY(${(1-p)*46}px)`;});
+  if(PLAN) document.getElementById('grid').style.transform=`translate(${(t*14)%200}px,${(t*9)%200}px)`;
   const sp=ease(lt/.22);sub.parentElement.style.opacity=sp;sub.textContent=c.sub||'';
   if(c.type==='demo'){demo.style.display='block';demo.style.opacity=ease(lt/.4);
     await new Promise(r=>{const h=()=>{dv.removeEventListener('seeked',h);r();};dv.addEventListener('seeked',h);dv.currentTime=Math.min(lt+(c.start||0),(dv.duration||99)-0.05);});

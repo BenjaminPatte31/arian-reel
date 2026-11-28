@@ -1,11 +1,13 @@
 {
   "id": "reel-11-avant-apres",
-  "theme": "paper",
+  "theme": "plan",
+  "planche": "Planche 01 · Avant / après",
+  "num": "11",
   "keyword": "SITE",
   "cards": [
-    { "t": 2.4, "type": "hook", "kicker": "AVANT / APRÈS", "title": "Ce qui fait\nappeler un\nclient.", "sub": "Tout se joue sur le premier écran." },
-    { "t": 2.6, "type": "beforeafter", "sub": "Avant : du texte. Après : une action évidente." },
+    { "t": 2.5, "type": "hook", "kicker": "LE PREMIER ÉCRAN", "title": "Ce qui fait\n*appeler* un\nclient.", "cote": "Sans faire défiler", "sub": "Tout se joue avant de faire défiler." },
+    { "t": 2.7, "type": "beforeafter", "sub": "Avant : du texte. Après : une action évidente." },
     { "t": 3.0, "type": "lines", "items": ["Métier + ville", "Le numéro en gros", "De vraies photos"], "sub": "Les 3 choses à voir sans faire défiler." },
-    { "t": 2.8, "type": "cta", "head": "Le vôtre ?\nCommentez", "sub": "On vous montre ce qu'on changerait, gratuitement." }
+    { "t": 2.8, "type": "cta", "head": "Et le vôtre ?\nCommentez", "sub": "On vous dit ce qu'on changerait, gratuitement." }
   ]
 }
