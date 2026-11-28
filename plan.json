@@ -87,7 +87,8 @@
     "timezone": "Europe/Paris",
     "hook": "Ce qui fait appeler un client. (avant/après, premier écran)",
     "status": "programme",
-    "metricool_id": "438427631"
+    "metricool_id": "445367624",
+    "note": "28/11 : refait en DA planche"
   },
   {
     "file": "reels/reel-12-coulisses-ce-quil-faut.mp4",
@@ -95,6 +96,7 @@
     "timezone": "Europe/Paris",
     "hook": "Votre site ? On a juste besoin de ça. (coulisses)",
     "status": "programme",
-    "metricool_id": "438427653"
+    "metricool_id": "445367644",
+    "note": "28/11 : refait en DA planche"
   }
 ]

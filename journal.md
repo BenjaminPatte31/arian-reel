@@ -58,3 +58,7 @@ Programmé cette semaine :
 - 01/12 18 h — Reel 11 « Ce qui fait appeler un client. » (avant/après schématique, premier écran). Id 438427631.
 - 03/12 18 h — Reel 12 « Votre site ? On a juste besoin de ça. » (coulisses). Id 438427653.
 - Créneaux 24/11 (Reel 07) et 26/11 (Reel 08) déjà remplis. Total novembre : 10 posts / 20. Décembre : 2 posts.
+
+## 28/11/2026 : nouvelle DA
+- Refonte d'arianstudio.fr : même charte, nouvelle direction « planche » (grille de plan, cotes, croquis, étiquettes « Planche 0X »). Le moteur suit : thèmes `plan` / `plan-ink`.
+- Reels 11 (01/12) et 12 (03/12) refaits dans la nouvelle DA, légendes alignées (sans prix, audit gratuit 48 h, hashtags France). Nouveaux ids : 445367624 et 445367644.
