@@ -1,17 +1,19 @@
 """Bande-son originale des Reels Arian Studio (100 % synthétisée, libre de droits).
 
 make_track(duration, cuts, out_wav, seed) écrit un WAV stéréo 44,1 kHz :
-- un beat house/lo-fi (kick, clap, charleston, basse, nappe d'accords) à 112 BPM ;
-- un « whoosh » avant chaque changement de carte (cuts = instants en secondes) ;
-- un petit « tick » à chaque apparition de carte ;
-- fondu d'entrée/sortie, crête à -1 dBFS.
+- un beat « Reel » énergique à 126 BPM : kick 4 temps, clap + caisse sur 2 et 4,
+  charleston en doubles croches avec accents, basse 808, nappe et mélodie « pluck » qui reste en tête ;
+- un impact (boom + crash) à 0 s pour que la 1re phrase tombe sur un temps fort ;
+- un « whoosh » montant avant chaque changement de carte et un impact à chaque carte ;
+- un « drop » : un demi-temps de silence juste avant la carte finale, puis impact ;
+- saturation douce, crête à -1 dBFS.
 La progression d'accords varie avec `seed` pour que chaque Reel sonne un peu différemment.
 """
 import numpy as np
 import wave
 
 SR = 44100
-BPM = 112
+BPM = 126
 BEAT = 60 / BPM
 
 PROGRESSIONS = [  # fondamentales en Hz (basse) + accords (fréquences)
@@ -106,55 +108,107 @@ def tick():
     return np.sin(2 * np.pi * 1800 * t) * _env(n, 0.0005, 0.012) * 0.12
 
 
+
+
+def sub808(freq, dur):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    f = freq * (1 + 1.5 * np.exp(-t * 40))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = np.tanh(2.2 * np.sin(ph))
+    return x * _env(n, 0.003, dur * 0.7) * 0.42
+
+
+def snare(rng):
+    n = int(0.2 * SR)
+    t = np.arange(n) / SR
+    tone = np.sin(2 * np.pi * 190 * t) * _env(n, 0.001, 0.04)
+    noise = _hp(rng.standard_normal(n), 1500) * _env(n, 0.001, 0.07)
+    return (tone * 0.5 + noise * 0.35) * 0.6
+
+
+def pluck(freq, dur):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    x = sum(2 * ((t * freq * (1 + d)) % 1.0) - 1 for d in (-0.006, 0.0, 0.006)) / 3
+    # filtre qui se ferme vite = attaque brillante puis son rond
+    bright, dark = _lp(x, 5200), _lp(x, 900)
+    k = np.exp(-t * 18)
+    y = bright * k + dark * (1 - k)
+    return y * _env(n, 0.002, 0.16) * 0.26
+
+
+def crash(rng, dur=1.2):
+    n = int(dur * SR)
+    return _hp(rng.standard_normal(n), 5000) * _env(n, 0.001, 0.25) * 0.07
+
+
+def impact(rng):
+    n = int(0.9 * SR)
+    t = np.arange(n) / SR
+    f = 38 + 120 * np.exp(-t * 18)
+    boom = np.sin(2 * np.pi * np.cumsum(f) / SR) * _env(n, 0.001, 0.32)
+    return boom * 0.9 + crash(rng, 0.9)[:n]
+
+
+# motifs de la mélodie (indice dans l'accord, -1 = silence), en doubles croches sur une mesure
+HOOKS = [
+    [0, -1, 2, -1, 1, -1, 2, 0, -1, 2, -1, 1, 2, -1, 1, -1],
+    [2, -1, 1, 0, -1, 0, 2, -1, 1, -1, 2, -1, 0, 1, -1, 2],
+    [0, 1, -1, 2, -1, 2, 1, -1, 0, -1, 2, 1, -1, 2, -1, -1],
+]
+
 def make_track(duration, cuts, out_wav, seed=0):
     rng = np.random.default_rng(seed)
-    n = int((duration + 0.5) * SR)
-    drums = np.zeros(n)
-    music = np.zeros(n)
-    fx = np.zeros(n)
+    n = int((duration + 1.5) * SR)
+    drums = np.zeros(n); music = np.zeros(n); fx = np.zeros(n)
     prog = PROGRESSIONS[seed % len(PROGRESSIONS)]
-    bar = 4 * BEAT
-    k, c = kick(), clap(rng)
+    hook = HOOKS[seed % len(HOOKS)]
+    bar = 4 * BEAT; s16 = BEAT / 4
+    k, cl, sn = kick(), clap(rng), snare(rng)
     b = 0
     while b * bar < duration + bar:
         t0 = b * bar
         name, chord = prog[b % len(prog)]
-        _add(music, pad(chord, bar), t0)
-        for beat in range(4):
-            tb = t0 + beat * BEAT
-            _add(drums, k, tb)
-            if beat in (1, 3):
-                _add(drums, c, tb)
-            _add(drums, hat(rng), tb + BEAT / 2)
-            _add(drums, hat(rng), tb + BEAT / 4 * 3)
-            _add(music, bass(ROOTS[name], BEAT / 2), tb + BEAT / 2)
+        _add(music, pad(chord, bar) * 0.7, t0)
+        _add(music, sub808(ROOTS[name], bar * 0.95), t0)
+        for st in range(16):
+            ts = t0 + st * s16
+            if st % 4 == 0:
+                _add(drums, k, ts)
+            if st in (4, 12):
+                _add(drums, cl, ts); _add(drums, sn, ts)
+            acc = 1.0 if st % 2 == 0 else 0.55
+            _add(drums, hat(rng, open_=(st % 4 == 2)) * acc, ts)
+            if hook[st] >= 0:
+                _add(music, pluck(chord[hook[st]] * 2, s16 * 2.2), ts)
         b += 1
-    for i, ct in enumerate(cuts):
+    _add(fx, impact(rng) * 0.7, 0.0)
+    last = cuts[-1] if cuts else None
+    for ct in cuts:
         if ct > 0.3:
-            _add(fx, whoosh(rng), max(0, ct - 0.42))
-        _add(fx, tick(), ct + 0.08)
-    # léger « sidechain » : la musique respire sur le kick
-    duck = np.ones(n)
+            _add(fx, whoosh(rng, 0.55) * 0.45, max(0, ct - 0.52))
+            _add(fx, impact(rng) * (0.6 if ct == last else 0.28), ct)
     tt = np.arange(n) / SR
     phase = (tt % BEAT) / BEAT
-    duck = 0.55 + 0.45 * np.clip(phase / 0.35, 0, 1)
-    mix = drums * 0.65 + music * duck + fx
+    duck = 0.65 + 0.35 * np.clip(phase / 0.3, 0, 1)
+    beat_bus = drums * 0.75 + music * duck
+    # drop : demi-temps de silence (sauf le whoosh) juste avant la carte finale
+    if last and last > 1.0:
+        i0, i1 = int((last - BEAT / 2) * SR), int(last * SR)
+        beat_bus[i0:i1] *= np.linspace(1, 0, i1 - i0) ** 4
+    mix = beat_bus + fx
     m = int(duration * SR)
     mix, fx = mix[:m], fx[:m]
-    # fondus
-    fi, fo = int(0.04 * SR), int(0.5 * SR)
-    mix[:fi] *= np.linspace(0, 1, fi)
+    fo = int(0.45 * SR)
     mix[-fo:] *= np.linspace(1, 0, fo)
-    # stéréo : charleston et fx un peu élargis
-    left = mix + 0.06 * np.roll(fx, 220)
-    right = mix + 0.06 * np.roll(fx, -220)
+    mix = np.tanh(mix / (np.max(np.abs(mix)) or 1) * 1.8)  # saturation douce = plus de punch
+    left = mix + 0.05 * np.roll(fx, 260)
+    right = mix + 0.05 * np.roll(fx, -260)
     st = np.stack([left, right], axis=1)
-    peak = np.max(np.abs(st)) or 1.0
-    st = st / peak * 10 ** (-1 / 20)
+    st = st / (np.max(np.abs(st)) or 1.0) * 10 ** (-1 / 20)
     pcm = (st * 32767).astype(np.int16)
     with wave.open(str(out_wav), "wb") as w:
-        w.setnchannels(2)
-        w.setsampwidth(2)
-        w.setframerate(SR)
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes(pcm.tobytes())
     return out_wav
