@@ -62,3 +62,4 @@ Programmé cette semaine :
 ## 28/11/2026 : nouvelle DA
 - Refonte d'arianstudio.fr : même charte, nouvelle direction « planche » (grille de plan, cotes, croquis, étiquettes « Planche 0X »). Le moteur suit : thèmes `plan` / `plan-ink`.
 - Reels 11 (01/12) et 12 (03/12) refaits dans la nouvelle DA, légendes alignées (sans prix, audit gratuit 48 h, hashtags France). Nouveaux ids : 445367624 et 445367644.
+- Bande-son refaite (126 BPM, impact d'ouverture, mélodie, drop avant le CTA) à la demande de Benjamin. Option « son tendance Instagram via Metricool » repoussée (pas prioritaire). Reels 11 et 12 refaits avec le nouveau son : ids 445371399 et 445371409.
